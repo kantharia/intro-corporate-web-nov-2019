@@ -1,5 +1,5 @@
 /*
-* PHLY - Versatile Coming Soon Template
+* Intro - Versatile Coming Soon Template
 * Build Date: October 2015
 * Last Update: October 2018
 * Author: Madeon08
@@ -99,7 +99,7 @@ table {
     text-align: center;
     margin: 0 auto; }
     #loading #preloader:after {
-      content: "Phly is loading";
+      content: "Intro is loading";
       /* Text under the circles */
       position: absolute;
       text-transform: uppercase;

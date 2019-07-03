@@ -11,7 +11,7 @@
 
 	<head>
 		<meta charset="utf-8">
-        <title>PHLY</title>
+        <title>Intro</title>
         <meta name="description" content="The description should optimally be between 150-160 characters.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Madeon08">
@@ -33,6 +33,51 @@
 
 		<!-- Modernizr runs quickly on page load to detect features -->
 		<script src="js/modernizr.custom.js"></script>
+
+		<!-- Custom Script -->
+		<script>
+			function subscribe(){
+				console.log("Data Here")
+				let email = $('#mail-sub')[0].value;
+				console.log("email : ", email)
+
+				if(email){
+					$.ajax({
+						type: "POST",
+						url: "https://k9jalhedxc.execute-api.us-west-2.amazonaws.com/dev/subscribe",
+						data: JSON.stringify({ email:email}),
+						success: subscribeSuccess,
+						dataType: 'application/json'
+					}).error(function(err){
+						let res = err.responseText;
+						res = JSON.parse(res);
+
+						if(res.error){
+							subscribeError()
+						} else {
+							subscribeSuccess()
+						}
+						
+					});
+				}
+			}
+
+			function clearError(){
+				$('.notify-valid')[ 0 ].innerHTML = ""
+				$('.block-message').removeClass('show-block-valid');
+				$('.block-message').removeClass('show-block-error');
+			}
+
+			function subscribeSuccess(){
+				$('.notify-valid')[0].innerHTML = "Success"
+				$('.block-message').addClass('show-block-valid');
+			}
+
+			function subscribeError(){
+				$('.notify-valid')[ 0 ].innerHTML = "Failure"
+				$('.block-message').addClass('show-block-error');
+			}
+		</script>
 	</head>
 	
 	<body>
@@ -64,16 +109,14 @@
 
 			<div class="content">
 
-				<h1 class="text-intro opacity-0">Hey Guys!<br>
-					We're Coming Soon...</h1>
+				<h3 class="text-intro opacity-0">Create your personal website from your smartphone in seconds for as little $30/yr.</h3>
 
-				<h2 class="text-intro opacity-0">Perfect and awesome template to present your future product or service.<br>
-					Hooking audience attention is all in the opener.</h2>
+				<!-- <h2 class="text-intro opacity-0">.</h2> -->
 
 				<nav>
 					<ul>
 						<li>
-							<a data-dialog="somedialog" class="action-btn trigger text-intro opacity-0">Notify Me!</a>
+							<a data-dialog="somedialog" class="action-btn trigger text-intro opacity-0">Sign-up for the Beta!</a>
 						</li>
 					</ul>
 				</nav>
@@ -83,10 +126,10 @@
 			<!-- Social icons -->
 			<div class="social-icons">
 
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="fab fa-instagram"></i></a>
-				<a href="#"><i class="fab fa-linkedin"></i></a>
+				<a href="https://facebook.com/the.intro.team" target="_blank"><i class="fab fa-facebook-f"></i></a>
+				<a href="https://twitter.com/the_intro_team" target="_blank"><i class="fab fa-twitter"></i></a>
+				<a href="https://instagram.com/theintroteam" target="_blank"><i class="fab fa-instagram"></i></a>
+				<a href="https://linkedin.com/company/theintroteam" target="_blank"><i class="fab fa-linkedin"></i></a>
 
 			</div>
 
@@ -98,80 +141,22 @@
 
 			<div class="content">
 
-				<h3>Light, Versatile & Surprising</h3>
+				
 
-				<p>Hi, I'm Phly, your new template ready to use. Handmade, precisely built with the famous Bootstrap Framework. Bonjour, je suis Phly, votre nouveau template prêt à l'emploi. Fait main, construit avec précision grâce au célèbre Framework Bootstrap. 嗨，我是PHLY，新模板准备。手工制作的，正是建有著名的引导框架。Hallo, ich bin Phly, Ihre neue Vorlage bereit. Handmade, genau mit dem berühmten Bootstrap Framework erstellt. Hola, soy Phly, la nueva plantilla de lista. Hecho a mano, construido precisamente con el famoso Marco Bootstrap.</p>
+				<br/>
 
-				<br><br>
+				<h3>People look up people they meet</h3>
+				
+<p>In the current reputation economy where like businesses people are treated as brands. The way one appears online determines how people follow-up with you. And all the more if you're a Solopreneur, Freelancer, Networking Professional, Agent or Advisor. </p>
+				
+<br/>
 
-				<div class="photo-line">
-					
-					<div class="my-gallery row" itemscope itemtype="http://schema.org/ImageGallery">
+<h3>Set the tone with every new connection you make.</h3>
 
-						<!-- Item -->
-						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="col-12 col-lg-6">
-							
-							<!-- Link to the picture and to open the gallery / Fill up well the data-size property -->
-							<a class="box-picture" href="img/gallery-1.jpg" itemprop="contentUrl" data-size="1920x1280">
-								
-								<!-- Your picture -->
-								<img src="img/gallery-1.jpg" itemprop="thumbnail" alt="This is my work" class="img-fluid" />
-								<p>Click</p>
-								
-							</a>
-								
-							<!-- Picture's description below this one -->
-							<figcaption itemprop="caption description">
-
-								<div class="photo-details">
-								
-									<h4>Fly in the sky</h4>
-
-									<span class="border"></span>
-
-									<p>This is what I love, and can't stop loving! I'm told to enjoy every moment, every hour, every minute.</p>
-
-								</div>
-
-							</figcaption>
-
-						</figure>
-
-						<!-- Item -->
-						<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="col-12 col-lg-6">
-							
-							<!-- Link to the picture and to open the gallery / Fill up well the data-size property -->
-							<a class="box-picture" href="img/gallery-2.jpg" itemprop="contentUrl" data-size="1920x1280">
-								
-								<!-- Your picture -->
-								<img src="img/gallery-2.jpg" itemprop="thumbnail" alt="This is my work" class="img-fluid" />
-								<p>Click</p>
-								
-							</a>
-								
-							<!-- Picture's description below this one -->
-							<figcaption itemprop="caption description">
-
-								<div class="photo-details">
-								
-									<h4>探索世界</h4>
-
-									<span class="border"></span>
-
-									<p>This is what I love, and can't stop loving! I'm told to enjoy every moment, every hour, every minute.</p>
-
-								</div>
-
-							</figcaption>
-
-						</figure>
-
-					
-							
-					</div>
-
-				</div>
-
+<p>Short attention spans, instantly formed opinions & limited information kill the opportunity that every new connection
+	holds. And while there’s so much to us, we rarely manage to get it across. Create and share your Intro, your .com -
+	business card.
+</p>
 				<span class="separator"></span>
 
 				<h3 id="get-contact">Get in touch with us!</h3>
@@ -186,12 +171,6 @@
 				</div>
 			</div>
 			<!-- /. Content -->
-
-			<footer>
-
-				<p>© Intro</p>
-
-			</footer>
 
 		</section>
 		<!-- START - More Informations/Right Part -->
@@ -208,14 +187,14 @@
 						
 				<div class="dialog-inner">
 							
-					<h4>You like taking the lead of line?</h4>
+					<h4>Beta Sign-up</h4>
 							
-					<p>Being the first to know always feels great... Signing up to our newsletter gives you <strong>exclusive access to our Grand Opening!</strong></p>
+					<p>Your interest got us super stoked! <br/>Special deals for you once we'are live. </strong></p>
 
 					<!-- Newsletter Form -->
 					<div id="subscribe">
 
-		                <form action="php/notify-me.php" id="notifyMe" method="POST">
+		                <form id="notifyMe">
 
 		                    <div class="form-group">
 
@@ -228,7 +207,7 @@
 		                        	<i class="fa fa-spinner opacity-0"></i>
 
 		                            <!-- Button -->
-		                            <button class="btn btn-lg submit">Get notified</button>
+		                            <a href="#" style="width: 100%; margin-top: 5%;" class="action-btn trigger text-intro animated-middle fadeInUp" onclick="subscribe();">Get notified</a>
 
 		                            <div class="clear"></div>
 

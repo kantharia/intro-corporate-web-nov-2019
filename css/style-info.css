@@ -1,5 +1,5 @@
 /*
-* PHLY - Versatile Coming Soon Template
+* Intro - Versatile Coming Soon Template
 * Build Date: October 2015
 * Last Update: October 2018
 * Author: Madeon08
@@ -193,7 +193,7 @@ table {
 }
 
 #loading #preloader:after {
-  content: "Phly is loading";
+  content: "Intro is loading";
   /* Text under the circles */
   position: absolute;
   text-transform: uppercase;
@@ -657,6 +657,7 @@ sup {
   -moz-osx-font-smoothing: grayscale;
   opacity: 1;
   visibility: visible;
+  height: 100vh;
 }
 
 #right-side .content h1,
@@ -670,7 +671,7 @@ sup {
 
 #right-side .content h3 {
   font-family: Montserrat, "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 700;
 }
 
@@ -961,7 +962,7 @@ sup {
   z-index: 5;
   opacity: 0;
   overflow: hidden;
-  background: url(../img/background-newsletter.jpg) center;
+  /* background: url(../img/background-newsletter.jpg) center; */
   background-size: cover;
   border: 10px solid #2B2D35;
 }
@@ -1464,6 +1465,7 @@ footer p {
     transform: translate3d(0, 0, 0);
     top: 0;
     width: 100%;
+    height: 100vh;
   }
 
   #right-side.hide-right {

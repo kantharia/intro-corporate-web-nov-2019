@@ -154,11 +154,11 @@ $(document).ready(function(){
     $("#notifyMe").notifyMe();
 
     (function() {
-
+        console.log("L")
         var dlgtrigger = document.querySelector( '[data-dialog]' ),
             somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),
             dlg = new DialogFx( somedialog );
-
+        console.log("dlg", dlg)
         dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
 
     })();
