@@ -129,7 +129,7 @@ table {
 
 #loading #preloader span {
   position: absolute;
-  border: 8px solid #00c8aa;
+  border: 8px solid #7E41FF;
   border-top: 8px solid transparent;
   border-radius: 999px;
 }
@@ -379,11 +379,11 @@ sup {
 }
 
 .action-btn {
-  background: #00c8aa;
+  background: #7E41FF;
   font-weight: 600;
   padding: 0.7em 2em;
   color: #FFFFFF;
-  border: 2px solid #00c8aa;
+  border: 2px solid #7E41FF;
   display: block;
   float: left;
 }
@@ -643,7 +643,7 @@ sup {
 #right-side .content .photo-line figure .photo-details span.border {
   display: block;
   height: 2px;
-  background: #00c8aa;
+  background: #7E41FF;
   width: 10%;
   margin: 0.8em 0 1em;
 }
@@ -662,7 +662,7 @@ sup {
   background: transparent;
   border: none;
   padding: 0;
-  color: #00c8aa;
+  color: #7E41FF;
   font-size: 1em;
   border-top: 50px solid #2B2D35;
   border-left: 50px solid transparent;
@@ -683,7 +683,7 @@ sup {
   background: transparent;
   border: none;
   padding: 0;
-  color: #00c8aa;
+  color: #7E41FF;
   font-size: 1em;
   border-bottom: 50px solid #2B2D35;
   border-left: 50px solid transparent;
@@ -704,7 +704,7 @@ sup {
   background: transparent;
   border: none;
   padding: 0;
-  color: #00c8aa;
+  color: #7E41FF;
   font-size: 1em;
   border-bottom: 50px solid #2B2D35;
   border-right: 50px solid transparent;
@@ -725,7 +725,7 @@ sup {
   background: transparent;
   border: none;
   padding: 0;
-  color: #00c8aa;
+  color: #7E41FF;
   font-size: 1em;
   border-top: 50px solid #2B2D35;
   border-right: 50px solid transparent;
@@ -797,7 +797,7 @@ sup {
 }
 
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-  background-color: #00c8aa;
+  background-color: #7E41FF;
 }
 
 .mCSB_scrollTools-left {
@@ -861,7 +861,7 @@ sup {
   width: 100%;
   height: 100%;
   z-index: -1;
-  border: 1px solid #00c8aa;
+  border: 1px solid #7E41FF;
   background: rgba(32, 35, 45, 0.8);
 }
 
@@ -964,13 +964,13 @@ sup {
 }
 
 #subscribe #notifyMe .form-group button.submit {
-  border: 2px solid #00c8aa;
+  border: 2px solid #7E41FF;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0;
   font-family: "Open Sans", "Helvetica Neue", "Lucida Grande", Arial, Verdana, sans-serif;
-  background: #00c8aa;
+  background: #7E41FF;
   color: #FFFFFF;
   height: 50px;
   padding: 1em 0;
@@ -1007,7 +1007,7 @@ sup {
 
 #subscribe .block-message.show-block-valid {
   bottom: 0;
-  background: #00c8aa;
+  background: #7E41FF;
 }
 
 #subscribe p.notify-valid {
@@ -1084,7 +1084,7 @@ sup {
 }
 
 .info-contact .item-map .contact-item i {
-  color: #00c8aa;
+  color: #7E41FF;
   font-size: 2em;
 }
 
@@ -1094,7 +1094,7 @@ sup {
 }
 
 .info-contact .item-map .contact-item a:hover {
-  color: #00c8aa;
+  color: #7E41FF;
 }
 
 #contact-form {
@@ -1136,7 +1136,7 @@ sup {
   font-size: 1em;
   display: block;
   margin: 0 auto 0;
-  background: #00c8aa;
+  background: #7E41FF;
   color: #FFFFFF;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -1215,12 +1215,12 @@ sup {
 }
 
 .social-icons a:hover {
-  color: #00c8aa;
+  color: #7E41FF;
   background: transparent;
 }
 
 .social-icons a:hover i {
-  color: #00c8aa;
+  color: #7E41FF;
   transform: scale(1.2);
 }
 
