@@ -1,362 +1,449 @@
-<!--
-* PHLY - Versatile Coming Soon Template
-* Build Date: October 2015
-* Last Update: October 2018
-* Author: Madeon08
-* Copyright (C) 20XX Madeon08
-* This is a premium product available exclusively here : https://themeforest.net/user/Madeon08/portfolio
-* -->
 <!DOCTYPE html>
-<html lang="en-us" class="no-js">
-
-	<head>
-		<meta charset="utf-8">
-        <title>Intro</title>
-        <meta name="description" content="The description should optimally be between 150-160 characters.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Madeon08">
-
-        <!-- ================= Favicon ================== -->
-        <!-- Standard -->
-        <link rel="shortcut icon" href="img/favicon.png">
-        <!-- Retina iPad Touch Icon-->
-        <link rel="apple-touch-icon" sizes="144x144" href="img/favicon-retina-ipad.png">
-        <!-- Retina iPhone Touch Icon-->
-        <link rel="apple-touch-icon" sizes="114x114" href="img/favicon-retina-iphone.png">
-        <!-- Standard iPad Touch Icon--> 
-        <link rel="apple-touch-icon" sizes="72x72" href="img/favicon-standard-ipad.png">
-        <!-- Standard iPhone Touch Icon--> 
-        <link rel="apple-touch-icon" sizes="57x57" href="img/favicon-standard-iphone.png">
-
-        <!-- ============== Resources style ============== -->
-        <link rel="stylesheet" href="css/style-info.css" />
-
-		<!-- Modernizr runs quickly on page load to detect features -->
-		<script src="js/modernizr.custom.js"></script>
-
-		<!-- Custom Script -->
-		<script>
-			function subscribe(){
-				console.log("Data Here")
-				let email = $('#mail-sub')[0].value;
-				console.log("email : ", email)
-
-				if(email){
-					$.ajax({
-						type: "POST",
-						url: "https://k9jalhedxc.execute-api.us-west-2.amazonaws.com/dev/subscribe",
-						data: JSON.stringify({ email:email}),
-						success: subscribeSuccess,
-						dataType: 'application/json'
-					}).error(function(err){
-						let res = err.responseText;
-						res = JSON.parse(res);
-
-						if(res.error){
-							subscribeError()
-						} else {
-							subscribeSuccess()
-						}
-						
-					});
-				}
-			}
-
-			function clearError(){
-				$('.notify-valid')[ 0 ].innerHTML = ""
-				$('.block-message').removeClass('show-block-valid');
-				$('.block-message').removeClass('show-block-error');
-			}
-
-			function subscribeSuccess(){
-				$('.notify-valid')[0].innerHTML = "Success"
-				$('.block-message').addClass('show-block-valid');
-			}
-
-			function subscribeError(){
-				$('.notify-valid')[ 0 ].innerHTML = "Failure"
-				$('.block-message').addClass('show-block-error');
-			}
-		</script>
-	</head>
-	
-	<body>
-
-		<!-- Page preloader -->
-		<div id="loading">
-			<div id="preloader">
-				<span></span>
-				<span></span>
-			</div>
-		</div>
-
-		<!-- Overlay and Star effect -->
-		<div class="global-overlay">
-			<div class="overlay">
-
-				<!-- <div id='stars'></div> -->
-				<!-- <div id='stars2'></div> -->
-				<!-- <div id='stars3'></div> -->
-
-			</div>
-		</div>
-
-		<!-- START - Home/Left Part -->
-		<section id="left-side">
-
-			<!-- Your logo -->
-			<img src="img/logo.png" alt="" class="brand-logo" />
-
-			<div class="content">
-
-				<h3 class="text-intro opacity-0">Create your personal website from your smartphone in seconds for as little $30/yr.</h3>
-
-				<!-- <h2 class="text-intro opacity-0">.</h2> -->
-
-				<nav>
-					<ul>
-						<li>
-							<a data-dialog="somedialog" class="action-btn trigger text-intro opacity-0">Sign-up for the Beta!</a>
-						</li>
-					</ul>
-				</nav>
-
-			</div>
-
-			<!-- Social icons -->
-			<div class="social-icons">
-
-				<a href="https://facebook.com/the.intro.team" target="_blank"><i class="fab fa-facebook-f"></i></a>
-				<a href="https://twitter.com/the_intro_team" target="_blank"><i class="fab fa-twitter"></i></a>
-				<a href="https://instagram.com/theintroteam" target="_blank"><i class="fab fa-instagram"></i></a>
-				<a href="https://linkedin.com/company/theintroteam" target="_blank"><i class="fab fa-linkedin"></i></a>
-
-			</div>
-
-		</section>
-		<!-- END - Home/Left Part -->
-
-		<!-- START - More Informations/Right Part -->
-		<section id="right-side">
-
-			<div class="content">
-
-				
-
-				<br/>
-
-				<h3>People look up people they meet</h3>
-				
-<p>In the current reputation economy where like businesses people are treated as brands. The way one appears online determines how people follow-up with you. And all the more if you're a Solopreneur, Freelancer, Networking Professional, Agent or Advisor. </p>
-				
-<br/>
-
-<h3>Set the tone with every new connection you make.</h3>
-
-<p>Short attention spans, instantly formed opinions & limited information kill the opportunity that every new connection
-	holds. And while there’s so much to us, we rarely manage to get it across. Create and share your Intro, your .com -
-	business card.
-</p>
-				<span class="separator"></span>
-
-				<h3 id="get-contact">Get in touch with us!</h3>
-				
-				<p>Wanna say hello? send us email on <a style="color:#7E41FF;" href="mailto:hello@theintrorteam.com" target="_blank">hello@theintroteam.com</a> .</p>
-	            
-	            <!-- Answer for the contact form is displayed in the next div, do not remove it. -->       
-                <div id="block-answer">
-
-					<div id="answer"></div>
-
-				</div>
-			</div>
-			<!-- /. Content -->
-
-		</section>
-		<!-- START - More Informations/Right Part -->
-
-		<!-- Button Cross to close the More Informations/Right Part -->
-		<button id="close-more-info" class="hide-close"><i class="fas fa-times"></i></button>
-
-		<!-- START - Newsletter Popup -->
-		<div id="somedialog" class="dialog">
-
-			<div class="dialog__overlay"></div>
-					
-			<div class="dialog__content">
-						
-				<div class="dialog-inner">
-							
-					<h4>Beta Sign-up</h4>
-							
-					<p>Your interest got us super stoked! <br/>Special deals for you once we'are live. </strong></p>
-
-					<!-- Newsletter Form -->
-					<div id="subscribe">
-
-		                <form id="notifyMe">
-
-		                    <div class="form-group">
-
-		                        <div class="controls">
-		                            
-		                        	<!-- Field  -->
-		                        	<input type="text" id="mail-sub" name="email" placeholder="Click here to write your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Click here to write your email'" class="form-control email srequiredField" />
-
-		                        	<!-- Spinner top left during the submission -->
-		                        	<i class="fa fa-spinner opacity-0"></i>
-
-		                            <!-- Button -->
-		                            <a href="#" style="width: 100%; margin-top: 5%;" class="action-btn trigger text-intro animated-middle fadeInUp" onclick="subscribe();">Get notified</a>
-
-		                            <div class="clear"></div>
-
-		                        </div>
-
-		                    </div>
-
-		                </form>
-
-						<!-- Answer for the newsletter form is displayed in the next div, do not remove it. -->
-						<div class="block-message">
-
-							<div class="message">
-
-								<p class="notify-valid"></p>
-
-							</div>
-
-						</div>
-
-        			</div>
-        			<!-- /. Newsletter Form -->
-
-				</div>
-				<!-- /. dialog-inner -->
-
-				<!-- Button Cross to close the Newsletter Popup -->
-				<button class="close-newsletter" data-dialog-close><i class="far fa-times-circle"></i></button>
-
-			</div>
-			<!-- /. dialog__content -->
-						
-		</div>
-		<!-- END - Newsletter Popup -->
-
-		<!-- Root element of PhotoSwipe, the gallery. Must have class pswp. -->
-		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-		    <!-- Background of PhotoSwipe. 
-	        	It's a separate element as animating opacity is faster than rgba(). -->
-		    <div class="pswp__bg"></div>
-
-		    <!-- Slides wrapper with overflow:hidden. -->
-		    <div class="pswp__scroll-wrap">
-
-		        <!-- Container that holds slides. 
-		            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-		            Don't modify these 3 pswp__item elements, data is added later on. -->
-		        <div class="pswp__container">
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-		            <div class="pswp__item"></div>
-		        </div>
-
-		        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-		        <div class="pswp__ui pswp__ui--hidden">
-
-		            <div class="pswp__top-bar">
-
-		                <!--  Controls are self-explanatory. Order can be changed. -->
-
-		                <div class="pswp__counter"></div>
-
-		                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-		                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-		                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-		                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-		                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-		                <!-- element will get class pswp__preloader--active when preloader is running -->
-		                <div class="pswp__preloader">
-		                    <div class="pswp__preloader__icn">
-		                      <div class="pswp__preloader__cut">
-		                        <div class="pswp__preloader__donut"></div>
-		                      </div>
-		                    </div>
-		                </div>
-
-		            </div>
-
-		            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-		                <div class="pswp__share-tooltip"></div> 
-		            </div>
-
-		            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-		            </button>
-
-		            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-		            </button>
-
-		            <div class="pswp__caption">
-		                <div class="pswp__caption__center"></div>
-		            </div>
-
-		        </div>
-
-		    </div>
-
-		</div>
-		<!-- /. Root element of PhotoSwipe. Must have class pswp. -->
-
-	<!-- ///////////////////\\\\\\\\\\\\\\\\\\\ -->
-    <!-- ********** Resources jQuery ********** -->
-    <!-- \\\\\\\\\\\\\\\\\\\/////////////////// -->
-	
-	<!-- * Libraries jQuery, Easing and Bootstrap - Be careful to not remove them * -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.easings.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-
-	<!-- Accelerated JavaScript animation JS file -->
-	<script src="js/velocity.min.js"></script> 
-
-	<!-- Accelerated JavaScript animation UI JS file -->
-	<script src="js/velocity.ui.min.js"></script> 
-
-	<!-- Newsletter plugin -->
-	<script src="js/notifyMe.js"></script>
-
-	<!-- Contact form plugin -->
-	<script src="js/contact-me.js"></script>
-
-	<!-- Slideshow/Image plugin -->
-	<!-- <script src="js/vegas-info.js"></script> -->
-
-	<!-- Scroll plugin -->
-	<script src="js/jquery.mousewheel.js"></script>
-
-	<!-- Custom Scrollbar plugin -->
-	<script src="js/jquery.mCustomScrollbar.js"></script>
-
-	<!-- Popup Newsletter Form -->
-	<script src="js/classie.js"></script>
-	<script src="js/dialogFx.js"></script>
-
-	<!-- PhotoSwipe Core JS file -->
-	<script src="js/photoswipe.js"></script> 
-
-	<!-- PhotoSwipe UI JS file -->
-	<script src="js/photoswipe-ui-default.js"></script>
-
-	<!-- Main JS File -->
-	<script src="js/main-info.js"></script>
-	
-	<!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
-
-	</body>
-
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Intro</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PDCJSJF');</script>
+  <!-- End Google Tag Manager -->
+  
+    <link rel="stylesheet" href="../../assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/intro_app_icons.css" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!-- <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"> -->
+    <meta name="theme-color" content="#2a4afc">
+
+    <!-- Search Engine -->
+    <meta name="description"
+      content="Personal websites made easy! Create and manage your very own .com from your smartphone. $30 per year, custom domain included.">
+    <meta name="image" content="https://www.intro.ooo/intro-logo.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Intro">
+    <meta itemprop="description"
+      content="Personal websites made easy! Create and manage your very own .com from your smartphone. $30 per year, custom domain included.">
+    <meta itemprop="image" content="https://www.intro.ooo/intro-logo.png">
+
+    <!-- twitter card details -->
+    <!-- <meta content='summary_large_image' name='twitter:card' />
+    <meta content='@the_intro_team' name='twitter:site' />
+    <meta content='@the_intro_team' name='twitter:creator' />
+    <meta content='www.intro.ooo' name='twitter:domain' />
+    <meta expr:content='data:post.firstImageUrl' name='twitter:image:src' />
+    <meta expr:content='data:post.title' name='twitter:title' />
+    <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription' name='twitter:description' />
+      <b:else />
+      <meta expr:content='data:post.snippet' name='twitter:description' />
+    </b:if>
+    <meta expr:content='data:post.sharePostUrl' name='twitter:url' /> -->
+    <!-- end twitter card details -->
+
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta property="og:url" content="http://www.intro.ooo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Intro" />
+    <meta property="og:description" content="Personal websites made easy! Create and manage your very own .com from your smartphone. $30 per year, custom domain included." />
+    <meta property="og:image" content="https://www.intro.ooo/intro-logo.png" />
+    <!-- Open Graph - Mobile App (iOS & Android) -->
+
+
+    <!-- Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143667569-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-143667569-1');
+    </script> -->
+    <!-- /Google Analytics -->
+
+
+    <!-- Facebook Pixel Code -->
+    <!-- <script>
+      !function (f, b, e, v, n, t, s)
+      {
+        if (f.fbq) return; n = f.fbq = function ()
+        {
+          n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[ 0 ];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '645818815939229');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=645818815939229&ev=PageView&noscript=1" /></noscript> -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- LinkedIn Start -->
+    <!-- <script type="text/javascript">
+      _linkedin_partner_id = "1269202";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function ()
+      {
+        var s = document.getElementsByTagName("script")[ 0 ];
+        var b = document.createElement("script");
+        b.type = "text/javascript"; b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      })();
+    </script> -->
+    <!-- LinkedIn End -->
+    <noscript>
+      <img height="1" width="1" style="display:none;" alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=1269202&fmt=gif" />
+    </noscript>
+
+    <!-- <script src="//code.tidio.co/pdkqym2ceqrhfbggutlny8hvy6ugwehk.js"></script>
+
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/657348a19cc727f4f9a6c3f45/a34b443e7b22430d040630c38.js");</script> -->
+    <script>
+
+      window.intercomSettings = {
+        app_id: "qeaskbl3"
+      };
+    </script>
+    
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/qeaskbl3';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+  </head>
+  <script>
+    function subscribe(){
+      let email1 = $('#email1')[0].value;
+      let email2 = $('#email2')[0].value;
+      const email = email1 || email2;
+
+
+      if (email)
+      {
+        // // Track Email Subscription
+        // fbq('track', 'Subscribe', { value: '0.00', currency: 'USD', predicted_ltv: '0.00', email:email });
+
+        $.ajax({
+          type: "POST",
+          url: "https://k9jalhedxc.execute-api.us-west-2.amazonaws.com/dev/subscribe",
+          data: JSON.stringify({ email: email }),
+          success: function (data, textStatus, jQxhr)
+          {
+            $.toast().reset('all');
+            $.toast({
+              heading: 'Success',
+              text: 'We have added you to the list',
+              textColor: 'white',
+              loader: false,
+              bgColor:"#27ae60"
+            })
+          },
+          error: function (jqXhr, textStatus, errorThrown)
+          {
+            $.toast().reset('all');
+            $.toast({
+              heading: 'Failed',
+              text: 'Connection error, please try again.',
+              textColor: 'white',
+              loader: false,
+              bgColor: "#0392b"
+            })
+          },
+          dataType: 'json'
+        })
+      }
+    }
+  </script>
+  <body class="">
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDCJSJF"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+    <!-- cover classic -->
+    <section class="p-0 bg-primary text-white text-blue-style" style="background-color: #ffffff !important;">
+      <div class="container">
+        <div class="row align-items-center justify-content-between py-3 py-md-6">
+          <div class="col-12 col-lg-6 text-center text-lg-left">
+            <h1 class="display-1 " style="font-size: 2.5em;"><b><i class="text-blue-style" style="font-weight: 900;">intro</i></b></h1>
+            <h1 class="display-4 text-blue-style" style="padding-top: 1.5em;">The coolest<br/>way to introduce yourself</h1>
+            <h3 class="text-blue-style">Sign-up for the <b class="text-blue-style">Beta</b>...</h3>
+            <div class="input-group mb-1 mt-10 " style="margin-top: 1.5em !important;">
+              <input id="email1" type="text" class="form-control px-3" style="border-color: #0f00ff;color: #0f00ff;height: calc(3.375rem + 3px);background-clip: unset;" placeholder="your@mail.com" aria-label="Get a beta subscription">
+              <div class="input-group-append" >
+                <button class="btn btn-blue-style" type="button" onclick="subscribe()">Sign-up</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 text-center"  data-aos-delay="500">
+            <!-- <iframe class="video-box-style"  src="https://www.youtube.com/embed/raCvENnWjQE?start=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <img src="assets/images/intro/landing_phone_creative.png" alt="Image">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / cover classic -->
+
+
+    <!-- steps carousel -->
+    <!-- <section class="bg-primary text-white pt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-12 text-center">
+            <h2><b>$30 per year, custom domain included!</b></h2>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- / steps carousel -->
+
+
+        <!-- presentation -->
+      <!--  <section>
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-4"  data-aos-anchor-placement="top-center">
+                <div class="presentation-circle">
+                  <figure style="background-size: contain; background-repeat: no-repeat; background-image: url('../../assets/images/intro/creative2.png')"></figure>
+                </div>
+              </div>
+              <div class="col-md-5 pl-md-10 text-center">
+                <h2><b>Yes, you can do it</b></h2>
+                <p>Intro is explicitly built for personal use. Create and update in real-time, on the go.  Requires absolutely no technical skills.</p>
+              </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-5 pr-md-10 text-center">
+                <h2><b>And here is why you should</b></h2>
+                <p>Introductions usually determine the fate of every relationship. And while there is so much to you, its really tough to
+                get it across. Unless of course, you've got Intro ;)</p>
+              </div>
+              <div class="col-md-4"  data-aos-anchor-placement="top-center">
+                <div class="presentation-circle">
+                  <figure style="background-size: contain; background-repeat: no-repeat; background-image: url('../../assets/images/intro/creative1.png')"></figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>  -->
+        <!-- / presentation -->
+
+
+    <!-- features -->
+    <!-- <section>
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-12 col-lg-6">
+            <img src="assets/images/intro/phone_home@3x.png" alt="Image">
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="row">
+              <div class="col">
+                <h2 class="text-decorate"><b>Features aimed at Self Expression & Personal Brand</b></h2>
+              </div>
+            </div>
+            <div class="row gutter-3">
+              <div class="col-4"  data-aos-anchor-placement="bottom-bottom">
+                <i class="fs-30 mb-2 text-purple" style="font-family: 'intro_app_icons';  font-style: normal;">
+                  !
+                </i>
+                <span class="eyebrow">Write an "About Me"</span>
+              </div>
+
+              <div class="col-4"  data-aos-anchor-placement="bottom-bottom">
+                <i class="fs-30 mb-2 text-purple" style="font-family: 'intro_app_icons';  font-style: normal;">
+                  7
+                </i>
+                <span class="eyebrow">Create your Blog</span>
+              </div>
+
+              <div class="col-4"  data-aos-anchor-placement="bottom-bottom">
+                <i class="fs-30 mb-2 text-purple" style="font-family: 'intro_app_icons';  font-style: normal;">
+                  -
+                </i>
+                <span class="eyebrow">Invite Testimonials</span>
+              </div>
+
+
+              <div class="col-4"  data-aos-anchor-placement="bottom-bottom">
+                <i class="fs-40 mb-2 text-purple" style="font-family: 'intro_app_icons';  font-style: normal;">
+                  +
+                </i>
+                <span class="eyebrow">Sync Social Networks</span>
+              </div>
+
+              
+              <div class="col-4"  data-aos-anchor-placement="bottom-bottom">
+                <i class="fs-30 mb-2 text-purple" style="font-family: 'intro_app_icons';  font-style: normal;">
+                  1
+                </i>
+                <span class="eyebrow">Add a Newsletter</span>
+              </div>
+
+              <div class="col-4"  data-aos-anchor-placement="bottom-bottom">
+                <i class="fs-30 mb-2 text-purple" style="font-family: 'intro_app_icons';  font-style: normal;">
+                  G
+                </i>
+                <span class="eyebrow">On your Personal Domain</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- / features  -->
+
+
+    <!-- gallery -->
+  <!--  <section class="bg-light separator-top separator-bottom">
+
+      <div>
+        <div class="container">
+          <div class="row justify-content-between">
+
+            <div class="col-12 col-lg-4 align-self-center text-center text-md-left">
+              <h2 class="h1"><b>Here is a sneak peek...</b></h2>
+              <p>We know you're curious but this is all we can show you right now. Signing up for the beta is the fastest way to get a closer look.</p>
+            </div>
+
+            <div class="col-12 col-lg-7 scrolling-gallery" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+              <div data-bottom-top="transform: translateY(0px);" data-top-bottom="transform: translateY(-1000px);">
+                <ul class="masonry gallery gutter-1 gutter-md-2">
+                  <li class="col-6">
+                    <figure class="photo">
+                      <img src="assets/images/intro/1.png" alt="Image">
+                    </figure>
+                  </li>
+                  <li class="col-6 mt-10">
+                    <figure class="photo">
+                      <img src="https://intro-assets.s3-us-west-2.amazonaws.com/images/6.png" alt="Image">
+                    </figure>
+                  </li>
+                  <li class="col-6">
+                    <figure class="photo">
+                      <img src="assets/images/intro/3.png" alt="Image">
+                    </figure>
+                  </li>
+                  <li class="col-6">
+                    <figure class="photo">
+                      <img src="assets/images/intro/4.png" alt="Image">
+                    </figure>
+                  </li>
+                  <li class="col-6">
+                    <figure class="photo">
+                      <img src="assets/images/intro/5.png" alt="Image">
+                    </figure>
+                  </li>
+                  <li class="col-6">
+                    <figure class="photo">
+                      <img src="assets/images/intro/6.png" alt="Image">
+                    </figure>
+                  </li>
+
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  -->
+    <!-- / gallery -->
+
+
+    <!-- footer -->
+    <footer class="bg-primary text-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <h2>Sign up for the <b>Beta</b></h2>
+            <div class="input-group mt-4">
+              <input id="email2" type="text" class="form-control px-4" style="height: calc(3.375rem + 3px);background-clip: unset;" placeholder="your@mail.com" aria-label="Mail">
+              <div class="input-group-append">
+                <button class="btn btn-white" type="button" onclick="subscribe()">Sign-up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="background: white; height: 2px; opacity: 0.3;"></div>
+      <div>
+        <div class="container py-5">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-5 text-center text-md-left">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a target="_blank" href="/legal.html" class="nav-link" href="#">Legal Information</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-2 text-center">
+              <img class="logo-sm" src="assets/images/intro/logo.png" alt="Logo">
+            </div>
+            <div class="col-md-5 text-center text-md-right">
+              <ul class="socials">
+                <li><a href="https://www.facebook.com/the.intro.team" target="_blank" class="icon-facebook fs-20"></a></li>
+                <li><a href="https://www.instagram.com/the.intro.team/" target="_blank" class="icon-instagram fs-20"></a></li>
+                <li><a href="https://twitter.com/the_intro_team" target="_blank" class="icon-twitter fs-20"></a></li>
+                <li><a href="https://www.linkedin.com/company/theintroteam/about/" target="_blank" class="icon-linkedin fs-20"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- / footer -->
+    <script src="../../assets/js/vendor.js"></script>
+    <script src="../../assets/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+    <!-- <script src="https://connect.facebook.net/en_US/fbevents.js"></script> -->
+    <script src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script>
+
+    <style>
+      #spin:after {
+        content:"";
+        animation: spin 2000ms linear infinite;
+      }
+
+      @keyframes spin {
+        0% { content:"coolest"; }
+        25% { content:"smartest"; }
+        50% { content:"fastest"; }
+        75% { content:"easiest"; }
+        100% { content:"newest"; }
+      }
+    </style>
+
+  </body>
 </html>
